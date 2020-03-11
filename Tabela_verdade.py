@@ -23,12 +23,12 @@ layout_D = False
 fim_programa = ("FINALIZAR", "Finalizar", "finalizar")
 
 end = 1
-
+voltar_layout = 1
+voltar_tamanho = 1
+tip = True
 while end >= -1:
 
     #Escolha do layout
-    voltar_layout = 1
-
     while voltar_layout > -1:
         #Utilizei o for para testar
         seleção_de_layout = ["  Opção A        Opção B        Opção C        Opção D  ",\
@@ -67,6 +67,11 @@ while end >= -1:
 
         elif fim_programa.count(layout) >= 1:
             print("Programa finalizado.")
+            voltar_layout -= 5
+            voltar_tamanho -= 5
+            end -= 5
+            tip = False
+
 
         else:
             print("\nErro na escolha de layout.\n")
@@ -92,322 +97,62 @@ while end >= -1:
     salvando = 0
 
     #Escolha do tamanho
-    voltar_tamanho = 1
 
-    print("\nPara finalizar o programa digite \"Finalizar\" durante a seleção do tamanho.\n")
-    print("Para ecolher um layout diferente digite \"Layout\",\n")
+    if tip == True:
+        print("\nPara finalizar o programa digite \"Finalizar\" durante a seleção do tamanho.\n")
+        print("Para ecolher um layout diferente digite \"Layout\".\n")
 
-    while voltar_tamanho > -1:
-        tamanho = input("\nQual será o tamanho da tabela?\n")
-        if tamanho.count(um) == 1:
-            if layout_A == True:
-                print("\nA tabela verdade é:\n")
+        while voltar_tamanho > -1:
+            tamanho = input("\nQual será o tamanho da tabela?\n")
+            if tamanho.count(um) == 1:
+                if layout_A == True:
+                    print("\nA tabela verdade é:\n")
 
-                print("  P  ")
-                print("     ")
-                print("  V  ")
-                print("  F  \n")
-
-
-            elif layout_B == True:
-                print("\nA tabela verdade é:\n")
-
-                print("  P  ")
-                print("     ")
-                print("  V  ")
-                print("  F  \n")
+                    print("  P  ")
+                    print("     ")
+                    print("  V  ")
+                    print("  F  \n")
 
 
-            elif layout_C == True:
-                print("\nA tabela verdade é:\n")
+                elif layout_B == True:
+                    print("\nA tabela verdade é:\n")
 
-                print("  P  ")
-                print("     ")
-                print("  F  ")
-                print("  V  \n")
-
-
-            elif layout_D == True:
-                print("\nA tabela verdade é:\n")
-
-                print("  P  ")
-                print("     ")
-                print("  F  ")
-                print("  V  \n")
+                    print("  P  ")
+                    print("     ")
+                    print("  V  ")
+                    print("  F  \n")
 
 
-        elif tamanho.count(dois) == 1:
-            operação = input("\nQual a operação que você irá fazer?\n")
+                elif layout_C == True:
+                    print("\nA tabela verdade é:\n")
 
-            if oper_E.count(operação) >= 1:
-                user_tabela = input("\nVocê irá digitar sua tabela?\n")
-
-                if nao.count(user_tabela) >= 1:
-
-                    if layout_A == True:
-                        print("\nA tabela verdade é:\n")
-
-                        print("  P  |  Q  |  P^Q")
-                        print("     |     |    ")
-                        print("  V  |  V  |   V")
-                        print("  F  |  V  |   F")
-                        print("  V  |  F  |   F")
-                        print("  F  |  F  |   F\n")
+                    print("  P  ")
+                    print("     ")
+                    print("  F  ")
+                    print("  V  \n")
 
 
-                    elif layout_B == True:
-                        print("\nA tabela verdade é:\n")
+                elif layout_D == True:
+                    print("\nA tabela verdade é:\n")
 
-                        print("  P  |  Q  |  P^Q")
-                        print("     |     |    ")
-                        print("  V  |  V  |   V")
-                        print("  V  |  F  |   F")
-                        print("  F  |  V  |   F")
-                        print("  F  |  F  |   F\n")
+                    print("  P  ")
+                    print("     ")
+                    print("  F  ")
+                    print("  V  \n")
 
 
-                    elif layout_C == True:
-                        print("\nA tabela verdade é:\n")
+            elif tamanho.count(dois) == 1:
+                operação = input("\nQual a operação que você irá fazer?\n")
 
-                        print("  P  |  Q  |  P^Q")
-                        print("     |     |    ")
-                        print("  F  |  F  |   F")
-                        print("  V  |  F  |   F")
-                        print("  F  |  V  |   F")
-                        print("  V  |  V  |   V\n")
+                if oper_E.count(operação) >= 1:
+                    user_tabela = input("\nVocê irá digitar sua tabela?\n")
 
-
-                    elif layout_D == True:
-                        print("\nA tabela verdade é:\n")
-
-                        print("  P  |  Q  |  P^Q")
-                        print("     |     |    ")
-                        print("  F  |  F  |   F")
-                        print("  F  |  V  |   F")
-                        print("  V  |  F  |   F")
-                        print("  V  |  V  |   V\n")
-
-
-                    else:
-                        print("Erro Inesperado.")
-
-
-                elif sim.count(user_tabela) >= 1:
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-
-
-                else:
-                    print("Erro.")
-                    print("Voltando para a escolha de tamanho.")
-
-
-            elif oper_OU.count(operação) >= 1:
-                user_tabela = input("\nVocê irá digitar sua tabela?\n")
-
-                if nao.count(user_tabela) >= 1:
-
-                    if layout_A == True:
-                        print("\nA tabela verdade é:\n")
-
-                        print("  P  |  Q  |  PvQ")
-                        print("     |     |    ")
-                        print("  V  |  V  |   V")
-                        print("  F  |  V  |   V")
-                        print("  V  |  F  |   V")
-                        print("  F  |  F  |   F\n")
-
-
-                    elif layout_B == True:
-                        print("\nA tabela verdade é:\n")
-
-                        print("  P  |  Q  |  PvQ")
-                        print("     |     |    ")
-                        print("  V  |  V  |   V")
-                        print("  V  |  F  |   V")
-                        print("  F  |  V  |   V")
-                        print("  F  |  F  |   F\n")
-
-
-                    elif layout_C == True:
-                        print("\nA tabela verdade é:\n")
-
-                        print("  P  |  Q  |  PvQ")
-                        print("     |     |    ")
-                        print("  F  |  F  |   F")
-                        print("  V  |  F  |   V")
-                        print("  F  |  V  |   V")
-                        print("  V  |  V  |   V\n")
-
-
-                    elif layout_D == True:
-                        print("\nA tabela verdade é:\n")
-
-                        print("  P  |  Q  |  PvQ")
-                        print("     |     |    ")
-                        print("  F  |  F  |   F")
-                        print("  F  |  V  |   V")
-                        print("  V  |  F  |   V")
-                        print("  V  |  V  |   V\n")
-
-
-                    else:
-                        print("Erro Inesperado.")
-
-
-                elif sim.count(user_tabela) >= 1:
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-                    print("Função ainda não implementada.")
-
-
-
-
-                else:
-                    print("Erro.")
-                    print("Voltando para a escolha de tamanho.")
-
-
-            elif oper_N.count(operação) >= 1:
-                user_tabela = input("\nVocê irá digitar sua tabela?\n")
-
-                if nao.count(user_tabela) >= 1:
-                    not_definir = input("Será \"not P\" ou \"not Q\"? Ou os dois? (\"P e Q\")\n")
-                    operação = input("\nE qual operação você fará?\n")
-
-                    if notQ.count(not_definir) >= 1 and oper_E.count(operação) >= 1:
+                    if nao.count(user_tabela) >= 1:
 
                         if layout_A == True:
                             print("\nA tabela verdade é:\n")
 
-                            print("  P  | ~Q  | P^~Q")
-                            print("     |     |    ")
-                            print("  V  |  F  |   F")
-                            print("  F  |  F  |   F")
-                            print("  V  |  V  |   V")
-                            print("  F  |  V  |   F\n")
-
-
-                        elif layout_B == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print("  P  | ~Q  | P^~Q")
-                            print("     |     |    ")
-                            print("  V  |  F  |   F")
-                            print("  V  |  V  |   V")
-                            print("  F  |  F  |   F")
-                            print("  F  |  V  |   F\n")
-
-
-                        elif layout_C == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print("  P  | ~Q  | P^~Q")
-                            print("     |     |    ")
-                            print("  F  |  V  |   F")
-                            print("  V  |  V  |   V")
-                            print("  F  |  F  |   F")
-                            print("  V  |  F  |   F\n")
-
-
-                        elif layout_D == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print("  P  | ~Q  | P^~Q")
-                            print("     |     |    ")
-                            print("  F  |  V  |   F")
-                            print("  F  |  F  |   F")
-                            print("  V  |  V  |   V")
-                            print("  V  |  F  |   F\n")
-
-
-                        else:
-                            print("Erro Inesperado.")
-
-
-                    elif notP.count(not_definir) >= 1 and oper_E.count(operação) >= 1:
-
-                        if layout_A == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print(" ~P  |  Q  | ~P^Q")
-                            print("     |     |    ")
-                            print("  F  |  V  |   F")
-                            print("  V  |  V  |   V")
-                            print("  F  |  F  |   F")
-                            print("  V  |  F  |   F\n")
-
-
-                        elif layout_B == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print(" ~P  |  Q  | ~P^Q")
-                            print("     |     |    ")
-                            print("  F  |  V  |   F")
-                            print("  F  |  F  |   F")
-                            print("  V  |  V  |   V")
-                            print("  V  |  F  |   F\n")
-
-
-                        elif layout_C == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print(" ~P  |  Q  | ~P^Q")
-                            print("     |     |    ")
-                            print("  V  |  F  |   F")
-                            print("  F  |  F  |   F")
-                            print("  V  |  V  |   V")
-                            print("  F  |  V  |   F\n")
-
-
-                        elif layout_D == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print(" ~P  |  Q  | ~P^Q")
-                            print("     |     |    ")
-                            print("  V  |  F  |   F")
-                            print("  V  |  V  |   V")
-                            print("  F  |  F  |   F")
-                            print("  F  |  V  |   F\n")
-
-
-                        else:
-                            print("Erro Inesperado.")
-
-
-                    elif notPQ.count(not_definir) >= 1 and oper_E.count(operação) >= 1:
-
-                        if layout_A == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print(" ~P  | ~Q  | P^~Q")
-                            print("     |     |    ")
-                            print("  F  |  F  |   F")
-                            print("  V  |  F  |   F")
-                            print("  F  |  V  |   F")
-                            print("  V  |  V  |   V\n")
-
-
-                        elif layout_B == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print(" ~P  | ~Q  | P^~Q")
-                            print("     |     |    ")
-                            print("  F  |  F  |   F")
-                            print("  F  |  V  |   F")
-                            print("  V  |  F  |   F")
-                            print("  V  |  V  |   V\n")
-
-
-                        elif layout_C == True:
-                            print("\nA tabela verdade é:\n")
-
-                            print(" ~P  | ~Q  | P^~Q")
+                            print("  P  |  Q  |  P^Q")
                             print("     |     |    ")
                             print("  V  |  V  |   V")
                             print("  F  |  V  |   F")
@@ -415,10 +160,10 @@ while end >= -1:
                             print("  F  |  F  |   F\n")
 
 
-                        elif layout_D == True:
+                        elif layout_B == True:
                             print("\nA tabela verdade é:\n")
 
-                            print(" ~P  | ~Q  | P^~Q")
+                            print("  P  |  Q  |  P^Q")
                             print("     |     |    ")
                             print("  V  |  V  |   V")
                             print("  V  |  F  |   F")
@@ -426,12 +171,272 @@ while end >= -1:
                             print("  F  |  F  |   F\n")
 
 
+                        elif layout_C == True:
+                            print("\nA tabela verdade é:\n")
+
+                            print("  P  |  Q  |  P^Q")
+                            print("     |     |    ")
+                            print("  F  |  F  |   F")
+                            print("  V  |  F  |   F")
+                            print("  F  |  V  |   F")
+                            print("  V  |  V  |   V\n")
+
+
+                        elif layout_D == True:
+                            print("\nA tabela verdade é:\n")
+
+                            print("  P  |  Q  |  P^Q")
+                            print("     |     |    ")
+                            print("  F  |  F  |   F")
+                            print("  F  |  V  |   F")
+                            print("  V  |  F  |   F")
+                            print("  V  |  V  |   V\n")
+
+
                         else:
                             print("Erro Inesperado.")
 
 
+                    elif sim.count(user_tabela) >= 1:
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+
+
                     else:
-                        print("AInda n está feito")
+                        print("Erro.")
+                        print("Voltando para a escolha de tamanho.")
+
+
+                elif oper_OU.count(operação) >= 1:
+                    user_tabela = input("\nVocê irá digitar sua tabela?\n")
+
+                    if nao.count(user_tabela) >= 1:
+
+                        if layout_A == True:
+                            print("\nA tabela verdade é:\n")
+
+                            print("  P  |  Q  |  PvQ")
+                            print("     |     |    ")
+                            print("  V  |  V  |   V")
+                            print("  F  |  V  |   V")
+                            print("  V  |  F  |   V")
+                            print("  F  |  F  |   F\n")
+
+
+                        elif layout_B == True:
+                            print("\nA tabela verdade é:\n")
+
+                            print("  P  |  Q  |  PvQ")
+                            print("     |     |    ")
+                            print("  V  |  V  |   V")
+                            print("  V  |  F  |   V")
+                            print("  F  |  V  |   V")
+                            print("  F  |  F  |   F\n")
+
+
+                        elif layout_C == True:
+                            print("\nA tabela verdade é:\n")
+
+                            print("  P  |  Q  |  PvQ")
+                            print("     |     |    ")
+                            print("  F  |  F  |   F")
+                            print("  V  |  F  |   V")
+                            print("  F  |  V  |   V")
+                            print("  V  |  V  |   V\n")
+
+
+                        elif layout_D == True:
+                            print("\nA tabela verdade é:\n")
+
+                            print("  P  |  Q  |  PvQ")
+                            print("     |     |    ")
+                            print("  F  |  F  |   F")
+                            print("  F  |  V  |   V")
+                            print("  V  |  F  |   V")
+                            print("  V  |  V  |   V\n")
+
+
+                        else:
+                            print("Erro Inesperado.")
+
+
+                    elif sim.count(user_tabela) >= 1:
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+                        print("Função ainda não implementada.")
+
+
+
+
+                    else:
+                        print("Erro.")
+                        print("Voltando para a escolha de tamanho.")
+
+
+                elif oper_N.count(operação) >= 1:
+                    user_tabela = input("\nVocê irá digitar sua tabela?\n")
+
+                    if nao.count(user_tabela) >= 1:
+                        not_definir = input("Será \"not P\" ou \"not Q\"? Ou os dois? (\"P e Q\")\n")
+                        operação = input("\nE qual operação você fará?\n")
+
+                        if notQ.count(not_definir) >= 1 and oper_E.count(operação) >= 1:
+
+                            if layout_A == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print("  P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  V  |  F  |   F")
+                                print("  F  |  F  |   F")
+                                print("  V  |  V  |   V")
+                                print("  F  |  V  |   F\n")
+
+
+                            elif layout_B == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print("  P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  V  |  F  |   F")
+                                print("  V  |  V  |   V")
+                                print("  F  |  F  |   F")
+                                print("  F  |  V  |   F\n")
+
+
+                            elif layout_C == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print("  P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  F  |  V  |   F")
+                                print("  V  |  V  |   V")
+                                print("  F  |  F  |   F")
+                                print("  V  |  F  |   F\n")
+
+
+                            elif layout_D == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print("  P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  F  |  V  |   F")
+                                print("  F  |  F  |   F")
+                                print("  V  |  V  |   V")
+                                print("  V  |  F  |   F\n")
+
+
+                            else:
+                                print("Erro Inesperado.")
+
+
+                        elif notP.count(not_definir) >= 1 and oper_E.count(operação) >= 1:
+
+                            if layout_A == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  |  Q  | ~P^Q")
+                                print("     |     |    ")
+                                print("  F  |  V  |   F")
+                                print("  V  |  V  |   V")
+                                print("  F  |  F  |   F")
+                                print("  V  |  F  |   F\n")
+
+
+                            elif layout_B == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  |  Q  | ~P^Q")
+                                print("     |     |    ")
+                                print("  F  |  V  |   F")
+                                print("  F  |  F  |   F")
+                                print("  V  |  V  |   V")
+                                print("  V  |  F  |   F\n")
+
+
+                            elif layout_C == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  |  Q  | ~P^Q")
+                                print("     |     |    ")
+                                print("  V  |  F  |   F")
+                                print("  F  |  F  |   F")
+                                print("  V  |  V  |   V")
+                                print("  F  |  V  |   F\n")
+
+
+                            elif layout_D == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  |  Q  | ~P^Q")
+                                print("     |     |    ")
+                                print("  V  |  F  |   F")
+                                print("  V  |  V  |   V")
+                                print("  F  |  F  |   F")
+                                print("  F  |  V  |   F\n")
+
+
+                            else:
+                                print("Erro Inesperado.")
+
+
+                        elif notPQ.count(not_definir) >= 1 and oper_E.count(operação) >= 1:
+
+                            if layout_A == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  F  |  F  |   F")
+                                print("  V  |  F  |   F")
+                                print("  F  |  V  |   F")
+                                print("  V  |  V  |   V\n")
+
+
+                            elif layout_B == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  F  |  F  |   F")
+                                print("  F  |  V  |   F")
+                                print("  V  |  F  |   F")
+                                print("  V  |  V  |   V\n")
+
+
+                            elif layout_C == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  V  |  V  |   V")
+                                print("  F  |  V  |   F")
+                                print("  V  |  F  |   F")
+                                print("  F  |  F  |   F\n")
+
+
+                            elif layout_D == True:
+                                print("\nA tabela verdade é:\n")
+
+                                print(" ~P  | ~Q  | P^~Q")
+                                print("     |     |    ")
+                                print("  V  |  V  |   V")
+                                print("  V  |  F  |   F")
+                                print("  F  |  V  |   F")
+                                print("  F  |  F  |   F\n")
+
+
+                            else:
+                                print("Erro Inesperado.")
+
+
+                        else:
+                            print("AInda n está feito")
 
 
 
@@ -439,24 +444,28 @@ while end >= -1:
 
 
 
-        elif tamanho.count(tres) == 1:
-            print("sla v")
+            elif tamanho.count(tres) == 1:
+                print("sla v")
 
-        elif ir_layout.count(tamanho) >= 1:
-            print("Você voltou para a escolha de layout.\n")
-            voltar_tamanho -= 5
-            voltar_layout += 5
-            layout_A = False
-            layout_B = False
-            layout_C = False
-            layout_D = False
+            elif ir_layout.count(tamanho) >= 1:
+                print("Você voltou para a escolha de layout.\n")
+                voltar_tamanho -= 5
+                voltar_layout += 5
+                layout_A = False
+                layout_B = False
+                layout_C = False
+                layout_D = False
 
-        elif fim_programa.count(tamanho) >= 1:
-            print("Programa finalizado")
+            elif fim_programa.count(tamanho) >= 1:
+                print("Programa finalizado")
+                voltar_tamanho -=5
+                voltar_layout -= 5
+                end -= 5
+                tip = False
 
-        else:
-            print("\nVocê digitou errado.\n")
-            print("Digite \"1\", \"2\" ou \"3\".\n")
+            else:
+                print("\nVocê digitou errado.\n")
+                print("Digite \"1\", \"2\" ou \"3\".\n")
 
 
 
