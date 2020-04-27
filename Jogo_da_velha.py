@@ -57,8 +57,8 @@ while cde == 1:
         print("Por favor, digite corretamente.\n")
 
 if multiplayer == False:
-    print("\nNo momento só exite 2 níveis de dificuldade:".center(50))
-    print("\"Fácil\" e \"Médio\".".center(50))
+    print("\nExite 3 níveis de dificuldade:".center(50))
+    print("\"Fácil\", \"Médio\" e \"Difícil\".".center(50))
 
     abc = 1
     while abc == 1:
