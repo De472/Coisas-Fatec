@@ -14,8 +14,7 @@ print("-" * 33)
 
 print("\nDigite sua senha e veja quanto")
 print("tempo demora para ser crackeada.")
-print("Resultados salvos quando você sair ")
-print("do programa digitando \"n\" no final.")
+print("Resultados em \"senhas_crackeadas.txt\"\n")
 
 
 def brute_force():
