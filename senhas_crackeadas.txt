@@ -1,0 +1,4 @@
+Senha: bjio4
+Caracteres: abcdefghijklmnopqrstuvwxyz0123456789 (36)
+Tempo: 11.8816 segundos
+
