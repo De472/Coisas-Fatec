@@ -1,4 +1,16 @@
-Senha: bjio4
+Senha: bjio4 (5)
 Caracteres: abcdefghijklmnopqrstuvwxyz0123456789 (36)
-Tempo: 11.8816 segundos
+Tempo: 0:10.5076 (minutos:segundos)
+
+Senha: educa (5)
+Caracteres: abcdefghijklmnopqrstuvwxyz0123456789 (36)
+Tempo: 0:37.9814 (minutos:segundos)
+
+Senha: bolas (5)
+Caracteres: abcdefghijklmnopqrstuvwxyz0123456789 (36)
+Tempo: 0:11.4243 (minutos:segundos)
+
+Senha: fatec (5)
+Caracteres: abcdefghijklmnopqrstuvwxyz0123456789 (36)
+Tempo: 0:54.5337 (minutos:segundos)
 

@@ -1,9 +1,9 @@
 
 import itertools
 import time
+import math
 
 lista_caracteres = open("caracteres.txt", "r", encoding= "utf-8")
-lista_senhas = open("senhas_crackeadas.txt", "a", encoding= "utf-8")
 #transforma os caracteres em lista e em seguida uma única string
 caracteres_lista = (lista_caracteres.readline()).split(" ")
 caracteres = "".join(caracteres_lista)
@@ -33,14 +33,20 @@ def brute_force():
             print(tentativa)
 
             if tentativa == password:
+                #quando o tempo passar de 60 segundos ele vira minutos
                 tempo_fim = time.time()
-                tempo = tempo_fim - tempo_start
+                tempo_raw = tempo_fim - tempo_start
+                tempo_min = math.floor(round(tempo_raw) / 60)
+                tempo_seg = round((60 * tempo_min + tempo_raw), 4)
+                tempo = str(tempo_min) + ":" + str(tempo_seg )
                 print("\nCrackeado.")
-                print("Tempo: " + str(round(tempo, 4)) + " segundos\n")
+                print("Tempo: " + tempo + " (minutos:segundos)\n")
                 #função para salvar os dados em um arquivp separado
-                lista_senhas.write("Senha: " + password + \
+                lista_senhas = open("senhas_crackeadas.txt", "a", encoding="utf-8")
+                lista_senhas.write("Senha: " + password + " (" + str(len(password)) + ")" + \
                                    "\nCaracteres: " + caracteres + " (" + str(len(caracteres)) + ")" + \
-                                   "\nTempo: " + str(round(tempo, 4)) + " segundos\n\n")
+                                   "\nTempo: " + tempo + " (minutos:segundos)\n\n")
+                lista_senhas.close()
 
 
                 return
